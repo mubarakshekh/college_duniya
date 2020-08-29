@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #444;
+    position: relative;
+}
+span {
+    display: inline-block;
+}
+.heading {
+    font-size: 18px;
+    margin: 2em 2em 0;
+}
+.container {
+    padding: 2em;
+    min-width: 670px;
+    font-size: 16px;
+}
+.card {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(68, 68, 68, 0.2);
+}
+.upper {
+    position: relative;
+}
+.upper img {
+    max-height: 230px;
+    z-index: -1;
+    filter: brightness(0.5);
+    height: auto;
+    width: 100%;
+}
+.upper img ~ * {
+    position: absolute;
+}
+.promoted {
+    text-transform: uppercase;
+    top: 0;
+    right: 0;
+    background: #68a7ff;
+    color: #fff;
+    font-size: 0.875em;
+    padding: 0.5em 2em 0.5em 3em;
+    clip-path: polygon(0 0, 12% 50%, 0 100%, 100% 100%, 100% 0);
+    transform: translateY(-50%);
+}
+.rating {
+    background: #f5a626;
+    border-radius: 4px;
+    padding: 0.5em;
+    top: 2em;
+    right: 1em;
+    text-align: center;
+}
+.rating span {
+    color: #fff;
+    font-size: 0.8125em;
+}
+.rating span:first-child {
+    font-weight: bold;
+    font-size: 0.9375em;
+}
+.rating span:last-child {
+    display: block;
+}
+.tag-wrapper {
+    bottom: 5%;
+    left: 2%;
+}
+.tag {
+    display: inline-block;
+    font-size: 0.8125em;
+    background: #fff;
+    padding: 0.5em 1em;
+    border-radius: 30px;
+    margin-left: 0.2em;
+}
+.ranking {
+    color: #fff;
+    right: 2%;
+    bottom: calc(5% + 0.5em);
+    font-size: 0.8125em;
+}
+.ranking::before {
+    content: "#";
+}
+.lower {
+    padding: 1em 1em 0.5em;
+}
+.college-name {
+    display: inline-block;
+    font-size: 1.125em;
+}
+.star-wrapper {
+    display: inline-block;
+    margin-left: 0.5em;
+}
+.star {
+    background: #444;
+    height: 0.8em;
+    width: 0.8em;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.star:last-child {
+    background: #9e9e9e;
+}
+.discount {
+    position: relative;
+    float: right;
+    color: #fff;
+    background: #dd1c26;
+    font-size: 0.6875em;
+    padding: 0.3em 0.5em 0.3em 1.5em;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 0 50%, 25% 0);
+}
+.discount::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff;
+    top: 40%;
+    left: 25%;
+}
+.original-fees {
+    float: right;
+    font-size: 0.6875em;
+    line-height: 18px;
+    margin-right: 0.5em;
+}
+.original-fees::before,
+.discounted-fees::before {
+    content: "₹";
+}
+.nearest-place {
+    font-size: 0.875em;
+    margin-top: 0.6em;
+}
+.nearest-place + .nearest-place {
+    color: #adadad;
+    margin-left: 0.1em;
+}
+.nearest-place + .nearest-place::before {
+    content: "|";
+    margin-right: 0.3em;
+}
+.discounted-fees {
+    color: #dd1c26;
+    font-weight: bold;
+    font-size: 1.81em;
+    position: absolute;
+    right: 0;
+}
+.match {
+    color: #37b396;
+    font-weight: bold;
+    margin-top: 0.7em;
+    font-size: 0.875em;
+}
+.famous-places {
+    font-size: 0.875em;
+    color: #adadad;
+    margin-top: 0.7em;
+}
+.fees-cycle {
+    font-size: 0.6875em;
+    color: #797979;
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+}
+.offer {
+    display: inline-block;
+    background: #ccf5e7;
+    margin-left: -1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.875em;
+    font-weight: bold;
+    margin-top: 0.7em;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.amenities {
+    position: relative;
+    float: right;
+    color: #37b396;
+    font-size: 0.875em;
+    margin-top: 1.2rem;
+    font-weight: bold;
+}
+.amenities + .amenities {
+    margin-right: 1em;
+}
+.amenities + .amenities::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #37b396;
+    top: 45%;
+    right: -0.7em;
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap;
+    }
+    .card {
+        width: calc(50% - 0.5em);
+    }
+}
+@media screen and (min-width: 1180px) {
+    .container {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .container {
+        font-size: 16px;
+    }
+}
